@@ -1,4 +1,4 @@
-## 项目来自于lxk0301(https://github.com/lxk0301/jd_scripts)
+## 项目来自于([lxk0301](https://github.com/lxk0301/jd_scripts))
 
 ## 特别声明: 
 

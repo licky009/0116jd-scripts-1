@@ -1,3 +1,5 @@
+## 项目来自于lxk0301(https://github.com/lxk0301/jd_scripts)
+
 ## 特别声明: 
 
 * 本仓库发布的Script项目中涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断.
@@ -105,6 +107,8 @@
 
  3、box可以支持多账号
 
+### 赞赏码(开发维护不易,请赏杯茶水费)
+<div align=center><img width="250" height="250" src="https://raw.githubusercontent.com/fm1223/jd_scripts/master/icon/thanks.jpg"/></div>
 
 ### 特别感谢(排名不分先后)：
 * [@NobyDa](https://github.com/NobyDa)

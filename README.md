@@ -1,4 +1,4 @@
-## 项目来自于[lxk0301](https://github.com/lxk0301/jd_scripts)
+## 项目来自于[lxk0301](https://github.com/lxk0301/jd_scripts)，大家就不要fork了，免的再被封，自己建个库不香吗
 ### 原作者赞赏码(开发维护不易,请赏杯茶水费)
 <div align=center><img width="250" height="250" src="https://raw.githubusercontent.com/fm1223/jd_scripts/master/icon/thanks.jpg"/></div>
 

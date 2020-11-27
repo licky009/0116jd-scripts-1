@@ -53,13 +53,15 @@ async function uploadShareCode() {
                 const res = await taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
                 if (res) {
                     let msg = `${el.name}分享码【${ele}】上传结果：${res.message}`;
-                    massage += msg;
+                    massage += msg + '\n';
                     console.log(msg);
+                } else {
+                    await notify.sendNotify('分享码上传失败', '分享码上传失败，请检查api地址是否正确');
                 }
             }
         }
         if (process.env.JD_DEBUG && process.env.JD_DEBUG === 'false') console.log = () => { };
-        await notify.sendNotify(massage);
+
     }
 }
 

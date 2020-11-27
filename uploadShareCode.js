@@ -14,21 +14,21 @@ let plantBeanShareCodes = ['lhubofhlunfauk4ys646do6xdu5ac3f4ijdgqji', 'mlrdw3aw2
 let uploadUrl = 'http://api.turinglabs.net/api/v1/jd/helpcode/create/sharecode/';
 
 const shareCodeArr = [{
-    helpcode = 'farm',
-    name = '东东农场',
-    shareCode = fruitShareCodes
+    helpcode: 'farm',
+    name: '东东农场',
+    shareCode: fruitShareCodes
 }, {
-    helpcode = 'ddfactory',
-    name = '东东工厂',
-    shareCode = jdfactoryShareCods
+    helpcode: 'ddfactory',
+    name: '东东工厂',
+    shareCode: jdfactoryShareCods
 }, {
-    helpcode = 'pet',
-    name = '东东萌宠',
-    shareCode = petShareCodes
+    helpcode: 'pet',
+    name: '东东萌宠',
+    shareCode: petShareCodes
 }, {
-    helpcode = 'bean',
-    name = '种豆得豆',
-    shareCode = plantBeanShareCodes
+    helpcode: 'bean',
+    name: '种豆得豆',
+    shareCode: plantBeanShareCodes
 }];
 
 const $ = new Env('上传分享码');

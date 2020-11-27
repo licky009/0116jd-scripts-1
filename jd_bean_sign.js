@@ -95,7 +95,6 @@ async function execSign() {
     await deleteFile(resultPath);//删除result.txt
     await deleteFile(JD_DailyBonusPath);//删除JD_DailyBonus.js
     console.log(`*****************京东账号${$.index} ${$.nickName || $.UserName}京豆签到完成*******************\n`);
-    uploadShareCode();
   } catch (e) {
     console.log("京东签到脚本执行异常:" + e);
   }

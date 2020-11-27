@@ -43,10 +43,10 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 
 
 async function uploadShareCode() {
-    const massage = '';
+    let massage = '';
     if ($.isNode()) {
         for (let i = 0; i < shareCodeArr.length; i++) {
-            const url = uploadUrl;
+            let url = uploadUrl;
             const el = shareCodeArr[i];
             for (let j = 0; j < el.shareCode.length; j++) {
                 const ele = el.shareCode[j];

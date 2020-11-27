@@ -45,17 +45,14 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 async function uploadShareCode() {
     const massage = '';
     if ($.isNode()) {
-        console.log(shareCodeArr.length);
         for (let i = 0; i < shareCodeArr.length; i++) {
             const url = uploadUrl;
             const el = shareCodeArr[i];
-            console.log(el);
             for (let j = 0; j < el.shareCode.length; j++) {
                 const ele = el.shareCode[j];
                 const res = await taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
-                console.log(res.code);
-                if (res && res.code === 200 && res.data) {
-                    let msg = `${el.name}分享码【${ele}】上传${(res.data.code !== 200) ? res.data.code === 400 ? '已存在' : '失败' : '成功'}`;
+                if (res) {
+                    let msg = `${el.name}分享码【${ele}】上传结果：${res.message}`;
                     massage += msg;
                     console.log(msg);
                 }
@@ -67,7 +64,6 @@ async function uploadShareCode() {
 }
 
 async function taskUrl(url) {
-    console.log(`开始请求：${url}`);
     return new Promise(resolve => {
         $.get({ url }, (err, resp, data) => {
             try {
@@ -77,7 +73,6 @@ async function taskUrl(url) {
                 } else {
                     if (data) {
                         data = JSON.parse(data);
-                        console.log(data);
                     }
                 }
             } catch (e) {

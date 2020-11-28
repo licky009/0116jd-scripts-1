@@ -10,6 +10,8 @@ let jdfactoryShareCods = ['P04z54XCjVWnYaS5n1RWT-rhSkU-iEooQ', 'P04z54XCjVWnYaS5
 let petShareCodes = ['MTE1NDUyMjEwMDAwMDAwMzY1MzM0NTE=', 'MTE1NDQ5MzYwMDAwMDAwMzY2Mzk2OTM='];
 //种豆得豆 bean
 let plantBeanShareCodes = ['lhubofhlunfauk4ys646do6xdu5ac3f4ijdgqji', 'mlrdw3aw26j3whvc2wvzisch2ivzpctslsnck7i'];
+//京喜工厂 jxfactory
+let dreamFactoryCodes ['PC-yzyURlilMIiB2ftCAVw==','2Ulj8cF7fqhTpQZy8nPu3Q=='];
 //上传分享码链接
 let uploadUrl = 'http://api.turinglabs.net/api/v1/jd/helpcode/create/sharecode/';
 
@@ -29,6 +31,10 @@ const shareCodeArr = [{
     helpcode: 'bean',
     name: '种豆得豆',
     shareCode: plantBeanShareCodes
+}, {
+    helpcode: 'jxfactory',
+    name: '京喜工厂',
+    shareCode: dreamFactoryCodes
 }];
 
 const $ = new Env('上传分享码');

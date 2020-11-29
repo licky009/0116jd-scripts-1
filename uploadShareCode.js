@@ -11,7 +11,7 @@ let petShareCodes = ['MTE1NDUyMjEwMDAwMDAwMzY1MzM0NTE=', 'MTE1NDQ5MzYwMDAwMDAwMz
 //种豆得豆 bean
 let plantBeanShareCodes = ['lhubofhlunfauk4ys646do6xdu5ac3f4ijdgqji', 'mlrdw3aw26j3whvc2wvzisch2ivzpctslsnck7i'];
 //京喜工厂 jxfactory
-let dreamFactoryCodes ['PC-yzyURlilMIiB2ftCAVw==','2Ulj8cF7fqhTpQZy8nPu3Q=='];
+let dreamFactoryCodes = ['PC-yzyURlilMIiB2ftCAVw==','2Ulj8cF7fqhTpQZy8nPu3Q=='];
 //上传分享码链接
 let uploadUrl = 'http://api.turinglabs.net/api/v1/jd/helpcode/create/sharecode/';
 

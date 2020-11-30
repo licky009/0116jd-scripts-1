@@ -1,8 +1,15 @@
-## 项目来自于[lxk0301](https://github.com/lxk0301/jd_scripts)，大家就不要fork了，免的再被封，自己建个库不香吗
-### 原作者赞赏码(开发维护不易,请赏杯茶水费)
+# 重要的事情说三遍
+### 这不是原作者库，原库[传送门](https://github.com/lxk0301/jd_scripts)
+## 这不是原作者库，原库[传送门](https://github.com/lxk0301/jd_scripts)
+# 这不是原作者库，原库[传送门](https://github.com/lxk0301/jd_scripts)
+
+### 本库特别声明:
+### 当前库并不保证同步[作者](https://github.com/lxk0301)所有代码，并且随时可能停更，禁止fork。建议访问[原库](https://github.com/lxk0301/jd_scripts)
+
+# 原作者赞赏码(开发维护不易,请赏杯茶水费)
 <div align=center><img width="250" height="250" src="https://raw.githubusercontent.com/fm1223/jd_scripts/master/icon/thanks.jpg"/></div>
 
-## 特别声明: 
+## 特别声明:
 
 * 本仓库发布的Script项目中涉及的任何解锁和解密分析脚本，仅用于测试和学习研究，禁止用于商业用途，不能保证其合法性，准确性，完整性和有效性，请根据情况自行判断.
 

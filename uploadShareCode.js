@@ -41,7 +41,7 @@ const $ = new Env('上传分享码');
 const notify = $.isNode() ? require('./sendNotify') : '';
 
 !(async () => {
-    console.log('\n上传分享码\n')
+    $.msg($.name,'上传活动分享码到互助池中','http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/', {"open-url": "http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/"});
     await uploadShareCode();
 })()
     .catch((e) => $.logErr(e))

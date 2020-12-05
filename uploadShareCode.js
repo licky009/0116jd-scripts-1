@@ -13,7 +13,7 @@ let plantBeanShareCodes = ['lhubofhlunfauk4ys646do6xdu5ac3f4ijdgqji', 'mlrdw3aw2
 //京喜工厂 jxfactory
 let dreamFactoryCodes = ['PC-yzyURlilMIiB2ftCAVw==', '2Ulj8cF7fqhTpQZy8nPu3Q==', '06bkoYiowVmQwdjcUntrpw=='];
 //金牌厂长 jxstory
-let jxstoryCodes = ['z2baHW__sGkOQIGF2aADO_7CK680YT9APU7NQvIGkr4=', 'F1nREbPhSVcOTeCFKvYIsFZ_IaI625ERPIQJWuSjp0U=', '4inu5jgmfPgAVAEqSfgc4mLlE6D_sBiNljwEJ2TK7jM='];
+let jxstoryCodes = [];//['z2baHW__sGkOQIGF2aADO_7CK680YT9APU7NQvIGkr4=', 'F1nREbPhSVcOTeCFKvYIsFZ_IaI625ERPIQJWuSjp0U=', '4inu5jgmfPgAVAEqSfgc4mLlE6D_sBiNljwEJ2TK7jM='];
 
 
 //上传分享码链接

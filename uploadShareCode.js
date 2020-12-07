@@ -48,15 +48,15 @@ const shareCodeArr = [{
 const $ = new Env('上传分享码');
 const notify = $.isNode() ? require('./sendNotify') : '';
 
-!(async () => {
+!(() => {
     $.msg($.name, '上传活动分享码到互助池中', 'http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/', { "open-url": "http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/" });
-    await uploadShareCode();
+    uploadShareCode();
 })()
     .catch((e) => $.logErr(e))
     .finally(() => $.done())
 
 
-async function uploadShareCode() {
+function uploadShareCode() {
     let massage = '';
     if ($.isNode()) {
         for (let i = 0; i < shareCodeArr.length; i++) {
@@ -65,13 +65,13 @@ async function uploadShareCode() {
             for (let j = 0; j < el.shareCode.length; j++) {
                 const ele = el.shareCode[j];
                 if (ele) {
-                    const res = await taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
+                    const res = taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
                     if (res) {
                         let msg = `${el.name}分享码【${ele}】上传结果：${res.message}`;
                         massage += msg + '\n';
                         console.log(msg);
                     } else {
-                        await notify.sendNotify('分享码上传失败', '分享码上传失败，请检查api地址是否正确');
+                        notify.sendNotify('分享码上传失败', '分享码上传失败，请检查api地址是否正确');
                     }
                 }
             }
@@ -81,7 +81,7 @@ async function uploadShareCode() {
     }
 }
 
-async function taskUrl(url) {
+function taskUrl(url) {
     return new Promise(resolve => {
         $.get({ url }, (err, resp, data) => {
             try {

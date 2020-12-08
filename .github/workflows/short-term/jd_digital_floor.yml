@@ -1,16 +1,17 @@
+
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: jd_jxstory
+# 数码加购京豆(2020.12.11活动过期)
+name: jd_digital_floor
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 7 * * *'
+    - cron: '8 16 * * *'
   watch:
     types: started
   repository_dispatch:
-    types: jxstory
+    types: digital_floor
 jobs:
   build:
 
@@ -35,9 +36,9 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【金牌厂长】'
+      - name: '运行 【数码加购京豆】'
         run: |
-          node jd_jxstory.js
+          node jd_digital_floor.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

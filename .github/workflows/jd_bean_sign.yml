@@ -7,7 +7,7 @@ name: jd_bean_sign
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16 * * *'
+    - cron: '0 16,4,10 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -39,7 +39,6 @@ jobs:
       - name: '运行 【京豆签到脚本】'
         run: |
           node jd_bean_sign.js
-          node jd_syj.js
           node uploadShareCode.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}

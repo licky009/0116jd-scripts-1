@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
-
-name: jd_pigPet
+# 京喜故事(2020.12.12活动过期)
+name: jd_jxstory
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '12 * * * *'
+    - cron: '10 * * * *'
   watch:
-    types: [started]
+    types: started
   repository_dispatch:
-    types: pigPet
+    types: jxstory
 jobs:
   build:
 
@@ -35,19 +35,21 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【金融养猪】'
+      - name: '运行 【金牌厂长】'
         run: |
-          node jd_pigPet.js
+          node jd_jxstory.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          JOY_FEED_COUNT: ${{ secrets.JOY_FEED_COUNT }}
+          JOY_RUN_FLAG: ${{ secrets.JOY_RUN_FLAG }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
+          BARK_SOUND: ${{ secrets.BARK_SOUND }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          PET_NOTIFY_CONTROL: ${{ secrets.PET_NOTIFY_CONTROL }}
-          BARK_SOUND: ${{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+          FACTORAY_WANTPRODUCT_NAME: ${{ secrets.FACTORAY_WANTPRODUCT_NAME }}

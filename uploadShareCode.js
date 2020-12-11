@@ -42,15 +42,19 @@ const shareCodeArr = [{
 const $ = new Env('上传分享码');
 const notify = $.isNode() ? require('./sendNotify') : '';
 
-!(() => {
+!(async() => {
     $.msg($.name, '上传活动分享码到互助池中', 'http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/', { "open-url": "http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/" });
-    uploadShareCode();
+    await uploadShareCode();
 })()
-    .catch((e) => $.logErr(e))
-    .finally(() => $.done())
+.catch((e) => {
+  $.log('', `❌ ${$.name}, 失败! 原因: ${e}!`, '')
+})
+.finally(() => {
+  $.done();
+})
 
 
-function uploadShareCode() {
+async function uploadShareCode() {
     let massage = '';
     if ($.isNode()) {
         for (let i = 0; i < shareCodeArr.length; i++) {
@@ -59,7 +63,7 @@ function uploadShareCode() {
             for (let j = 0; j < el.shareCode.length; j++) {
                 const ele = el.shareCode[j];
                 if (ele) {
-                    const res = taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
+                    const res = await taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
                     if (res) {
                         let msg = `【${el.name}】分享码【${ele}】上传结果：${res}`;
                         massage += msg + '\n';
@@ -75,7 +79,7 @@ function uploadShareCode() {
     }
 }
 
-function taskUrl(url) {
+async function taskUrl(url) {
     return new Promise(resolve => {
         $.get({ url }, (err, resp, data) => {
             try {

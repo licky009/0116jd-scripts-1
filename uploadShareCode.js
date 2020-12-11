@@ -12,8 +12,6 @@ let petShareCodes = ['MTE1NDUyMjEwMDAwMDAwMzY1MzM0NTE=', 'MTE1NDQ5MzYwMDAwMDAwMz
 let plantBeanShareCodes = ['lhubofhlunfauk4ys646do6xdu5ac3f4ijdgqji', 'mlrdw3aw26j3whvc2wvzisch2ivzpctslsnck7i', 'olmijoxgmjutya6efkgamslxhyr6nvfhcpeuxbi'];
 //京喜工厂 jxfactory
 let dreamFactoryCodes = ['PC-yzyURlilMIiB2ftCAVw==', '2Ulj8cF7fqhTpQZy8nPu3Q==', '06bkoYiowVmQwdjcUntrpw=='];
-//金牌厂长 jxstory
-let jxstoryCodes = [];//['z2baHW__sGkOQIGF2aADO_7CK680YT9APU7NQvIGkr4=', 'F1nREbPhSVcOTeCFKvYIsFZ_IaI625ERPIQJWuSjp0U=', '4inu5jgmfPgAVAEqSfgc4mLlE6D_sBiNljwEJ2TK7jM='];
 
 
 //上传分享码链接
@@ -39,10 +37,6 @@ const shareCodeArr = [{
     helpcode: 'jxfactory',
     name: '京喜工厂',
     shareCode: dreamFactoryCodes
-}, {
-    helpcode: 'jxstory',
-    name: '金牌厂长',
-    shareCode: jxstoryCodes
 }];
 
 const $ = new Env('上传分享码');
@@ -67,7 +61,7 @@ function uploadShareCode() {
                 if (ele) {
                     const res = taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
                     if (res) {
-                        let msg = `${el.name}分享码【${ele}】上传结果：${res.message}`;
+                        let msg = `【${el.name}】分享码【${ele}】上传结果：${res}`;
                         massage += msg + '\n';
                         console.log(msg);
                     } else {

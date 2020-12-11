@@ -65,7 +65,7 @@ async function uploadShareCode() {
                 if (ele) {
                     const res = await taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
                     if (res) {
-                        let msg = `【${el.name}】分享码【${ele}】上传结果：${res}`;
+                        let msg = `【${el.name}】分享码【${ele}】上传结果：${JSON.stringify(res)}`;
                         massage += msg + '\n';
                         console.log(msg);
                     } else {

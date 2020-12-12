@@ -64,7 +64,7 @@ async function uploadShareCode() {
                 const ele = el.shareCode[j];
                 if (ele) {
                     const res = await taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
-                    await statisitcs(res, el.name, ele)
+                    await statistics(res, el.name, ele)
                     if (res) {
                         $.log(`【${el.name}】分享码【${ele}】上传结果：${JSON.stringify(res)}\n`);
                     } else {
@@ -73,7 +73,7 @@ async function uploadShareCode() {
                 }
             }
         }
-        await notify.sendNotify(`上传互助码`, JSON.stringify(statisitc));
+        await notify.sendNotify(`上传互助码`, JSON.stringify(statistic));
 
     }
 }
@@ -99,7 +99,7 @@ async function taskUrl(url) {
     })
 }
 
-async function statisitcs(res, name, code) {
+async function statistics(res, name, code) {
     if (res) {
         if (res.code === 200) {
             statistic.success++;

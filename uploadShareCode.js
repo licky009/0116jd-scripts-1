@@ -104,14 +104,15 @@ async function statistics(res, name, code) {
         if (res.code === 200) {
             statistic.success++;
         } else if (res.code === 400) {
-            if (res.message == 'This ddfactory share code existed') {
-                statistic.exist++;
+            if (res.message.indexOf('existed') != -1) {
+                statistic.exist++;                
             } else if (res.message == 'code error') {
                 statistic.codeErr++;
             }
             else {
                 statistic.fail++;
             }
+            statistic.push(res.message)
         }
     } else {
         statistic.noRes++;

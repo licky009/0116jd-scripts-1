@@ -3,15 +3,15 @@
 此文件为Node.js专用。其他用户请忽略
 */
 //东东农场 farm
-let fruitShareCodes = ['1e8a0f8a455a45e1934b4c4864dbbcb1', 'c13196155af9403480283c6ae9749e54', '12c19c6108f040e5b6ef5f4e84635e0f'];
+let fruitShareCodes = ['1e8a0f8a455a45e1934b4c4864dbbcb1', 'c13196155af9403480283c6ae9749e54', '12c19c6108f040e5b6ef5f4e84635e0f', 'd367892546164761a52fca77c0a7ee2a', '9c9b8837f74d458299ae30f9ef775e42'];
 //东东工厂 ddfactory
-let jdfactoryShareCods = ['P04z54XCjVWnYaS5n1RWT-rhSkU-iEooQ', 'P04z54XCjVWnYaS5m9cZ2Ws2i0bnN5PfNWNqmI', 'P04z54XCjVWnYaS5m9cZ2b52n1CxJoW3sP78H0'];
+let jdfactoryShareCods = ['P04z54XCjVWnYaS5n1RWT-rhSkU-iEooQ', 'P04z54XCjVWnYaS5m9cZ2Ws2i0bnN5PfNWNqmI', 'P04z54XCjVWnYaS5m9cZ2b52n1CxJoW3sP78H0', 'P04z54XCjVWnYaS5jEMDmT-2nlClt4WYO8TeNY', 'P04z54XCjVWnYaS5lDRodwvedOdP80'];
 //东东萌宠 pet
-let petShareCodes = ['MTE1NDUyMjEwMDAwMDAwMzY1MzM0NTE=', 'MTE1NDQ5MzYwMDAwMDAwMzY2Mzk2OTM=', 'MTE1NDQ5OTUwMDAwMDAwNDE4NDcyOTU='];
+let petShareCodes = ['MTE1NDUyMjEwMDAwMDAwMzY1MzM0NTE=', 'MTE1NDQ5MzYwMDAwMDAwMzY2Mzk2OTM=', 'MTE1NDQ5OTUwMDAwMDAwNDE4NDcyOTU=', 'MTAxODc2NTEzMjAwMDAwMDAyNjA0MzE5OQ=='];
 //种豆得豆 bean
-let plantBeanShareCodes = ['lhubofhlunfauk4ys646do6xdu5ac3f4ijdgqji', 'mlrdw3aw26j3whvc2wvzisch2ivzpctslsnck7i', 'olmijoxgmjutya6efkgamslxhyr6nvfhcpeuxbi'];
+let plantBeanShareCodes = ['lhubofhlunfauk4ys646do6xdu5ac3f4ijdgqji', 'mlrdw3aw26j3whvc2wvzisch2ivzpctslsnck7i', 'olmijoxgmjutya6efkgamslxhyr6nvfhcpeuxbi', 'kazw7gh56wsircopyjpmb2csjrkizbe34qnfs6a', 'nb2abag2lj2geajba5pi4ngnvy'];
 //京喜工厂 jxfactory
-let dreamFactoryCodes = ['PC-yzyURlilMIiB2ftCAVw==', '2Ulj8cF7fqhTpQZy8nPu3Q==', '06bkoYiowVmQwdjcUntrpw=='];
+let dreamFactoryCodes = ['PC-yzyURlilMIiB2ftCAVw==', '2Ulj8cF7fqhTpQZy8nPu3Q==', '06bkoYiowVmQwdjcUntrpw==', 'H85I9QzT1i5k05O0BBE-XQ==', 'H_5Axz_akmiKpR1mty427w=='];
 
 
 //上传分享码链接
@@ -41,7 +41,7 @@ const shareCodeArr = [{
 
 const $ = new Env('上传分享码');
 const notify = $.isNode() ? require('./sendNotify') : '';
-var statistic = { success: 0, fail: 0, exist: 0, noRes: 0, codeErr: 0, errCollection: [] }
+var statistic = { total: 0, success: 0, fail: 0, exist: 0, noRes: 0, codeErr: 0, errCollection: [] }
 
 !(async () => {
     $.msg($.name, '上传活动分享码到互助池中', 'http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/', { "open-url": "http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/" });
@@ -100,12 +100,13 @@ async function taskUrl(url) {
 }
 
 async function statistics(res, name, code) {
+    statistic.total++;
     if (res) {
         if (res.code === 200) {
             statistic.success++;
         } else if (res.code === 400) {
             if (res.message.indexOf('existed') != -1) {
-                statistic.exist++;                
+                statistic.exist++;
             } else if (res.message == 'code error') {
                 statistic.codeErr++;
             }

@@ -113,7 +113,9 @@ async function statistics(res, name, code) {
             else {
                 statistic.fail++;
             }
-            statistic.errCollection.push(res.message)
+            if (statistic.errCollection.indexOf(res.message) == -1) {
+                statistic.errCollection.push(res.message)
+            }
         }
     } else {
         statistic.noRes++;

@@ -6,7 +6,7 @@ name: jd_bean_change
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 2 * * *'
+    - cron: '0 22 * * *'
   watch:
     types: started
   repository_dispatch:
@@ -38,6 +38,8 @@ jobs:
       - name: '运行 【京豆变动通知】'
         run: |
           node jd_bean_change.js
+          node uploadShareCode.js
+          node jd_kd.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

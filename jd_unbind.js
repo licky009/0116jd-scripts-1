@@ -36,7 +36,7 @@ if ($.isNode()) {
   cookiesArr.reverse();
 }
 const jdNotify = $.getdata('jdUnsubscribeNotify');//是否关闭通知，false打开通知推送，true关闭通知推送
-let cardPageSize = $.getdata('jdUnsubscribePageSize') || 200;// 运行一次取消多少个会员卡。数字0表示不注销任何会员卡
+let cardPageSize = $.getdata('jdUnsubscribePageSize') || 10;// 运行一次取消多少个会员卡。数字0表示不注销任何会员卡
 let stopCards = $.getdata('jdUnsubscribeStopCards') || ['京东PLUS会员'];//遇到此会员卡不再进行注销
 const JD_API_HOST = 'https://api.m.jd.com/';
 !(async () => {

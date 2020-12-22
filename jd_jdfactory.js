@@ -303,12 +303,13 @@ async function doTask() {
     if (item.taskType === 21) {
       //开通会员任务
       if (item.status === 1) {
-        console.log(`此任务：${item.taskName}，跳过`);
-        // for (let task of item.brandMemberVos) {
-        //   if (task.status === 1) {
-        //     await jdfactory_collectScore(task.taskToken);
-        //   }
-        // }
+        // console.log(`此任务：${item.taskName}，跳过`);
+        console.log(`准备做此任务：${item.taskName}`);
+        for (let task of item.brandMemberVos) {
+          if (task.status === 1) {
+            await jdfactory_collectScore(task.taskToken);
+          }
+        }
       } else {
         console.log(`${item.taskName}已做完`)
       }

@@ -165,7 +165,6 @@ function getUserInfo() {
         } else {
           if (safeGet(data)) {
             data = JSON.parse(data);
-            console.log(data)
             $.actId = data.data.jklInfo.keyId
             let {shareCode, groupCode} = data.data
             if (!shareCode) {

@@ -44,6 +44,7 @@ jobs:
           node jd_bean_home.js # 领京豆额外奖励&抢京豆
           node jd_car.js # 京东汽车签到 
           node jd_rankingList.js # 京东排行榜
+          node jd_ds.js # 京东代属，类似十元街
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

@@ -38,7 +38,7 @@ jobs:
       - name: '运行 【京东看一看】'
         run: |
           node jd_live.js
-          node jd_watch.js
+          # node jd_watch.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

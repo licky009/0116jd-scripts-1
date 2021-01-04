@@ -1,7 +1,7 @@
-name: 同步上游仓库
+name: sync fm1223-scripts
 on:
   schedule:
-    - cron: '0 12,3 * *'
+    - cron: '0 12,3 * * *'
   watch:
     types: started
   repository_dispatch:

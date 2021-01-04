@@ -1,16 +1,16 @@
 # This workflow will do a clean install of node dependencies, build the source code and run tests across different versions of node
 # For more information see: https://help.github.com/actions/language-and-framework-guides/using-nodejs-with-github-actions
 
-name: st_jr_sign
+name: jd_watch
 
 on:
   workflow_dispatch:
   schedule:
-    - cron: '10 6 * * *'
+    - cron: '0 17 * * *'
   watch:
-    types: [started]
+        types: started
   repository_dispatch:
-    types: necklace
+    types: watch
 jobs:
   build:
 
@@ -35,18 +35,17 @@ jobs:
       - name: npm install
         run: |
           npm install
-      - name: '运行 【金融打卡领年终奖】'
+      - name: '运行 【京东看一看】'
         run: |
-          node jr_sign.js
+          node jd_live.js
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}
+          UN_SUBSCRIBES: ${{ secrets.UN_SUBSCRIBES }}
           PUSH_KEY: ${{ secrets.PUSH_KEY }}
           BARK_PUSH: ${{ secrets.BARK_PUSH }}
-          PETSHARECODES: ${{ secrets.PETSHARECODES }}
           TG_BOT_TOKEN: ${{ secrets.TG_BOT_TOKEN }}
           TG_USER_ID: ${{ secrets.TG_USER_ID }}
-          PET_NOTIFY_CONTROL: ${{ secrets.PET_NOTIFY_CONTROL }}
           BARK_SOUND: ${{ secrets.BARK_SOUND }}
           DD_BOT_TOKEN: ${{ secrets.DD_BOT_TOKEN }}
           DD_BOT_SECRET: ${{ secrets.DD_BOT_SECRET }}

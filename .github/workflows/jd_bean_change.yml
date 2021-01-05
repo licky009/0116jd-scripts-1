@@ -43,7 +43,6 @@ jobs:
           node jd_syj.js # 十元街
           node jd_bean_home.js # 领京豆额外奖励&抢京豆
           node jd_rankingList.js # 京东排行榜
-          node jd_apple_live.js # 苹果抽奖机
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

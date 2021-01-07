@@ -38,6 +38,7 @@ jobs:
       - name: '运行 【京东汽车签到】'
         run: |
             node jd_car.js # 京东汽车签到 
+            node jd_car_exchange.js # 汽车兑换金豆
         env:
           JD_COOKIE: ${{ secrets.JD_COOKIE }}
           JD_DEBUG: ${{ secrets.JD_DEBUG }}

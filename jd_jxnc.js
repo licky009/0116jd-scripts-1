@@ -120,7 +120,7 @@ function requireConfig() {
 
         if ($.isNode()) {
             Object.keys(jdTokenNode).forEach((item) => {
-                tokenArr.push(tokenArr[item] ? JSON.parse(jxncShareCodeArr[item]) : tokenNull)
+                tokenArr.push(tokenArr[item] ? JSON.parse(jxncShareCodeArr[item]) : jdTokenNode[item])
             })
         } else {
             tokenArr.push(...[$.getdata('jxnc_token1') || tokenNull, $.getdata('jxnc_token2') || tokenNull]);
@@ -191,6 +191,7 @@ function tokenFormat() {
         } else {
             currentToken = tokenNull;
         }
+        console.log(`${JSON.stringify(currentToken)}`)
         resolve();
     })
 }

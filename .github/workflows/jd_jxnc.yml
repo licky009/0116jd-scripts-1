@@ -53,3 +53,4 @@ jobs:
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
           JXNCTOKENS: ${{ secrets.JXNC_SHARECODES }}
+          JXNCTOKENS: ${{ secrets.JXNC_NOTIFY_LEVEL }}

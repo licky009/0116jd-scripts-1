@@ -52,5 +52,5 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           JXNCTOKENS: ${{ secrets.JXNCTOKENS }}
-          JXNCTOKENS: ${{ secrets.JXNC_SHARECODES }}
-          JXNCTOKENS: ${{ secrets.JXNC_NOTIFY_LEVEL }}
+          JXNC_SHARECODES: ${{ secrets.JXNC_SHARECODES }}
+          JXNC_NOTIFY_LEVEL: ${{ secrets.JXNC_NOTIFY_LEVEL }}

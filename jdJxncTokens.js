@@ -6,9 +6,9 @@
 // 每个账号 token 是一个 json，示例如下
 // {"farm_jstoken":"749a90f871adsfads8ffda7bf3b1576760","timestamp":"1610165423873","phoneid":"42c7e3dadfadsfdsaac-18f0e4f4a0cf"}
 let JxncTokens = [
-    '{"farm_jstoken":"c1ab56b75007e7538bc5ed1a845729a3","timestamp":"1610357260825","phoneid":"8c232c8f580783a6-35363505653247"}',//账号一的好友shareCode,不同好友中间用@符号隔开
-    '{"farm_jstoken":"","timestamp":"","phoneid":""}',//账号二的好友shareCode，不同好友中间用@符号隔开
-    '{"farm_jstoken":"7f39e0397b49b4f7377f697dc69dacff","timestamp":"1610357989442","phoneid":"6bfb3aec55accc44-35363595653247"}',//账号二的好友shareCode，不同好友中间用@符号隔开
+    {"farm_jstoken":"c1ab56b75007e7538bc5ed1a845729a3","timestamp":"1610357260825","phoneid":"8c232c8f580783a6-35363505653247"},//账号一的好友shareCode,不同好友中间用@符号隔开
+    {"farm_jstoken":"","timestamp":"","phoneid":""},//账号二的好友shareCode，不同好友中间用@符号隔开
+    {"farm_jstoken":"7f39e0397b49b4f7377f697dc69dacff","timestamp":"1610357989442","phoneid":"6bfb3aec55accc44-35363595653247"},//账号二的好友shareCode，不同好友中间用@符号隔开
   ]
   // 判断github action里面是否有京喜农场 token 
   if (process.env.JXNCTOKENS) {

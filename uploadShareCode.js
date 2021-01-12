@@ -12,31 +12,40 @@ let petShareCodes = ['MTE1NDUyMjEwMDAwMDAwMzY1MzM0NTE=', 'MTE1NDQ5MzYwMDAwMDAwMz
 let plantBeanShareCodes = ['lhubofhlunfauk4ys646do6xdu5ac3f4ijdgqji', 'mlrdw3aw26j3whvc2wvzisch2ivzpctslsnck7i', 'olmijoxgmjutya6efkgamslxhyr6nvfhcpeuxbi', 'kazw7gh56wsircopyjpmb2csjrkizbe34qnfs6a', 'nb2abag2lj2geajba5pi4ngnvy','fn5sjpg5zdejm37z7rqjd22j5fzrinzdvcb7ydi'];
 //京喜工厂 jxfactory
 let dreamFactoryCodes = ['PC-yzyURlilMIiB2ftCAVw==', '2Ulj8cF7fqhTpQZy8nPu3Q==', '06bkoYiowVmQwdjcUntrpw==', 'H85I9QzT1i5k05O0BBE-XQ==', 'H_5Axz_akmiKpR1mty427w==','t2cdKwg2QPBzAqd5KMCNHg=='];
+//领现金 jdcash
+let cashCodes = ['a0JmM7_qM6JJtzeV', 'eU9Yabi1N60voj-AnXASgw', 'eU9Yau21Z_R39j_RnSdG0w'];
+//疯狂的Joy jdcrazyjoy
+let crazyJoyCodes = ['p6ds_iLSw23EDt21SPsDpA==', 'QrAI7deSXLS6wERHyLtoPat9zd5YaBeE', '1_cC2bMxdF26kSXQwavO86t9zd5YaBeE'];
 
-
-//上传分享码链接
-let uploadUrl = 'http://api.turinglabs.net/api/v1/jd/helpcode/create/sharecode/';
 
 const shareCodeArr = [{
-    helpcode: 'farm',
+    url: 'http://api.turinglabs.net/api/v1/jd/farm/create/sharecode/',
     name: '东东农场',
     shareCode: fruitShareCodes
 }, {
-    helpcode: 'ddfactory',
+    url: 'http://api.turinglabs.net/api/v1/jd/ddfactory/create/sharecode/',
     name: '东东工厂',
     shareCode: jdfactoryShareCods
 }, {
-    helpcode: 'pet',
+    url: 'http://api.turinglabs.net/api/v1/jd/pet/create/sharecode/',
     name: '东东萌宠',
     shareCode: petShareCodes
 }, {
-    helpcode: 'bean',
+    url: 'http://api.turinglabs.net/api/v1/jd/bean/create/sharecode/',
     name: '种豆得豆',
     shareCode: plantBeanShareCodes
 }, {
-    helpcode: 'jxfactory',
+    url: 'http://api.turinglabs.net/api/v1/jd/jxfactory/create/sharecode/',
     name: '京喜工厂',
     shareCode: dreamFactoryCodes
+}, {
+    url: 'https://code.chiang.fun/api/v1/jd/jdcash/create/sharecode/',
+    name: '领现金',
+    shareCode: cashCodes
+}, {
+    url: 'https://code.chiang.fun/api/v1/jd/jdcrazyjoy/create/sharecode/',
+    name: '疯狂的joy',
+    shareCode: crazyJoyCodes
 }];
 
 const $ = new Env('上传分享码');
@@ -58,12 +67,11 @@ var statistic = { total: 0, success: 0, fail: 0, exist: 0, noRes: 0, codeErr: 0,
 async function uploadShareCode() {
     if ($.isNode()) {
         for (let i = 0; i < shareCodeArr.length; i++) {
-            let url = uploadUrl;
             const el = shareCodeArr[i];
             for (let j = 0; j < el.shareCode.length; j++) {
                 const ele = el.shareCode[j];
                 if (ele) {
-                    const res = await taskUrl(url.replace('helpcode', el.helpcode).replace('sharecode', ele));
+                    const res = await taskUrl(el.url.replace('sharecode', ele));
                     await statistics(res, el.name, ele)
                     if (res) {
                         $.log(`【${el.name}】分享码【${ele}】上传结果：${JSON.stringify(res)}\n`);

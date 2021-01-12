@@ -53,7 +53,7 @@ const notify = $.isNode() ? require('./sendNotify') : '';
 var statistic = { total: 0, success: 0, fail: 0, exist: 0, noRes: 0, codeErr: 0, errCollection: [] }
 
 !(async () => {
-    $.msg($.name, '上传活动分享码到互助池中', 'http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/', { "open-url": "http://api.turinglabs.net/api/v1/jd/{helpcode}/create/{sharecode}/" });
+    $.msg($.name, '上传活动分享码到互助池中');
     await uploadShareCode();
 })()
     .catch((e) => {
@@ -72,16 +72,16 @@ async function uploadShareCode() {
                 const ele = el.shareCode[j];
                 if (ele) {
                     const res = await taskUrl(el.url.replace('sharecode', ele));
-                    await statistics(res, el.name, ele)
+                    //await statistics(res, el.name, ele)
                     if (res) {
-                        $.log(`【${el.name}】分享码【${ele}】上传结果：${JSON.stringify(res)}\n`);
+                        $.log(`⭕【${el.name}】分享码【${ele}】上传结果：${JSON.stringify(res)}\n`);
                     } else {
-                        $.log(`【${el.name}】分享码【${ele}】上传失败。result:${JSON.stringify(res)}\n`);
+                        $.log(`❌【${el.name}】分享码【${ele}】上传失败。result:${JSON.stringify(res)}\n`);
                     }
                 }
             }
         }
-        await notify.sendNotify(`上传互助码`, JSON.stringify(statistic));
+        //await notify.sendNotify(`上传互助码`, JSON.stringify(statistic));
 
     }
 }

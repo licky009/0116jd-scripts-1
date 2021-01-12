@@ -58,3 +58,4 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           JD_818_SHAREID_NOTIFY: ${{ secrets.JD_818_SHAREID_NOTIFY }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
+          JD_CASH_SHARECODES: ${{ secrets.JD_CASH_SHARECODES }}

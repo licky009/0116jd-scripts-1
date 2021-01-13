@@ -56,3 +56,4 @@ jobs:
           IGOT_PUSH_KEY: ${{ secrets.IGOT_PUSH_KEY }}
           JD_USER_AGENT: ${{ secrets.JD_USER_AGENT }}
           BOOKSHOP_SHARECODES: ${{ secrets.BOOKSHOP_SHARECODES }}
+          PURCHASE_SHOPS: ${{ secrets.PURCHASE_SHOPS }}

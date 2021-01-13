@@ -101,7 +101,7 @@ async function taskUrl(url) {
             } catch (e) {
                 console.log(e, resp)
             } finally {
-                resolve(data);
+                resolve();
             }
         })
     })

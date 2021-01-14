@@ -6,7 +6,7 @@ name: jd_family
 on:
   workflow_dispatch:
   schedule:
-    - cron: '0 16,0,4,8 * * *' # 1 0,8,12,16 * * *
+    - cron: '0 */1 * * *' # 0 */1 * * *
   watch:
     types: started
   repository_dispatch:
